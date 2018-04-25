@@ -1,3 +1,6 @@
-[submodule "ud120-projects"]
-	path = ud120-projects
+[submodule "machine-learning/src"]
+	path = machine-learning/src
+	url = https://github.com/udacity/ud120-projects.git
+[submodule "machine-learning/course-sunmodule-repo"]
+	path = machine-learning/course-sunmodule-repo
 	url = https://github.com/udacity/ud120-projects.git
