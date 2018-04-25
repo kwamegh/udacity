@@ -8,16 +8,13 @@ import ssl
 
 class Setup(object):
 	def __init__(self):
-		# add certs 
-		os.system("sudo apt-get install -y python-requests")
 		
-		self.addCerts()
+		print "Let's start the setup!"
+		#print "install pip ..."
+		#os.system("sudo apt-get install -y python-pip")
 
-		print "install pip ..."
-		os.system("sudo apt-get install -y python-pip")
-
-		print "update pip ..."
-		os.system("sudo pip install --upgrade pip --user")
+		#print "update pip ..."
+		#os.system("sudo pip install --upgrade pip --user")
 
 	def installModule(self, module):
 		# try:
@@ -29,7 +26,7 @@ class Setup(object):
 
 		# import module 
 		print "\nInstalling " + module + "..."
-		os.system("sudo pip install " + module + "--user")
+		os.system("sudo apt-get install -y python-" + module )
 		print 
 
 	def downloadDataset(self, link, filename):
@@ -50,7 +47,7 @@ class Setup(object):
 
 	def uninstallModule(self, module):
 		print "\nUninstalling " + module 
-		os.system("sudo pip uninstall -y " + module) 
+		os.system("sudo apt-get purge -y python-" + module) 
 
 # add certs 
 # credit: https://stackoverflow.com/questions/27835619/urllib-and-ssl-certificate-verify-failed-error  
@@ -87,7 +84,9 @@ if __name__ == '__main__':
 
   print
 
+  os.system("sudo apt-get autoremove")
+
   url="https://www.cs.cmu.edu/~./enron/enron_mail_20150507.tar.gz"
-  #s.downloadDataset(url, "enron_mail_20150507.tar.gz")
+  s.downloadDataset(url, "enron_mail_20150507.tar.gz")
 
 
